@@ -39,7 +39,7 @@ In order to transform the data and use it in our study, the following were perfo
 </p>
 
 
-The whole process (from getting Garmin's data to all sql transformations) was wrapped up in an [SSIS package and deployed into the SQL Integration Service Catalog](https://github.com/patrykrostkowski/Garmin_Data_ETL_Project/blob/main/X_raw_files/SSIS_package.png)
+The whole process (from getting Garmin's data to all sql transformations) was wrapped up in an SSIS package and deployed into the SQL Integration Service Catalog.
 
 ## Data Cleanup and Analysis
 ### Data preparation and transformation 
