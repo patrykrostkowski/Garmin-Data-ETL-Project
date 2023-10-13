@@ -60,7 +60,7 @@ Here are some ideas I wanted to explore in further analysis
 - stress, weekday and active minutes correlation
 - how intense exercices during the day or before sleep impacts sleep phases
   
-### [HERE YOU CAN READ MY HEALTH ARTICLE](https://github.com/patrykrostkowski/Garmin_Data_ETL_Project/blob/main/4.Sample_analysis/Analysis.md)
+### [HERE YOU CAN READ MY HEALTH ARTICLE](https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/main/4.Sample_analysis/Analysis.md)
 
 ## End notes
 This data analysis is based on a limited set of data points and should not be extrapolated to the masses. Please consider it as a fun read.
