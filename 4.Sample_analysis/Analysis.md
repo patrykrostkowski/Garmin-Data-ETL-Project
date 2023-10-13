@@ -6,7 +6,7 @@ Despite innate skepticism and thank to curiousness about new technologies I join
 So, after quite a long research, Garmin was a choice. After few days something clicked. The Garmin app did a pretty good job of capturing and showcasing the data, but personally, other brands like Huawei or Samsung did it in more consumable format. (but I must admit the Garmin is targetting their products for different market segment).  
 
 <p align="center">
-  <img width="700" height="350" src="https://github.com/patrykrostkowski/Garmin_Data_ETL_Project/blob/main/0.Raw_images/Health%20Dashboards.png">
+  <img width="700" height="350" src="https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/main/0.Raw_images/Health%20Dashboards.png">
 </p>  
 
 > Source: https://blog.essentialdesign.com/rating-the-user-experience-of-wearables [access 10/9/2023]  
