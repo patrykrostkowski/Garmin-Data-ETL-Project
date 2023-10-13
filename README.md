@@ -43,7 +43,7 @@ The whole process (from getting Garmin's data to all sql transformations) was wr
 
 ## Data Cleanup and Analysis
 ### Data preparation and transformation 
-To be able to choose which tables we want to load, config table [(example)](https://github.com/patrykrostkowski/Garmin_Data_ETL_Project/blob/main/X_raw_files/config_table.png) contains the full list of tables, the schema they will be created in, and an indicator pointing which table we want to see in the final output
+To be able to choose which tables we want to load, config table [(example)](https://github.com/patrykrostkowski/Garmin_Data_ETL_Project/blob/main/0.Raw_images/config_table.png) contains the full list of tables, the schema they will be created in, and an indicator pointing which table we want to see in the final output
 - src - schema created for staging objects (by 'staging', I mean object loaded in the original structure as they were in the SQLite database)
 - dbo - schema created for transformed objects
 - some columns were removed, cause it doesnt collect any/important data
