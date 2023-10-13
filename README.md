@@ -35,7 +35,7 @@ In order to transform the data and use it in our study, the following were perfo
 - some SQL views with combination of specified data for visuals purpose
 
 <p align="center">
-  <img width="500" height="400" src="https://github.com/patrykrostkowski/Garmin_Data_ETL_Project/blob/main/X_raw_files/etl_flow_diagram.png">
+  <img width="500" height="400" src="https://github.com/patrykrostkowski/Garmin_Data_ETL_Project/blob/main/0.Raw_images/etl_flow_diagram.png">
 </p>
 
 
