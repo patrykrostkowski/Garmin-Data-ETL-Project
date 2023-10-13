@@ -24,7 +24,7 @@ Intrigued by the sheer variety of data points Garmin could capture, after few mo
 ---
 # Getting the Data 
 As mentioned in [README](https://github.com/patrykrostkowski/Garmin_Data_ETL_Project/tree/main#readme), I downloaded and parsed data via [GarminDB](https://github.com/tcgoetz/GarminDB) into SQLite databases.  
-I've created linked servers in SSMS. After that, I created procedure called [`dbo.p_create_src_views`](https://github.com/patrykrostkowski/Garmin_Data_ETL_Project/blob/main/2.DBs_Backup/garmin_21092023/dbo.p_create_src_views.StoredProcedure.sql) that creates views dynamically by taking proper schema and table names from `dbo.config`. That process was repeated for 4 databases.  
+I've created linked servers in SSMS. After that, I created procedure called [`dbo.p_create_src_views`](https://github.com/patrykrostkowski/Garmin_Data_ETL_Project/blob/main/2.DBs_Backup/garmin_10102023/dbo.p_create_src_views.StoredProcedure.sql) that creates views dynamically by taking proper schema and table names from `dbo.config`. That process was repeated for 4 databases.  
 
 |TableSchema|SchemaName|IsActive|
 |---|---|---|
@@ -32,7 +32,7 @@ I've created linked servers in SSMS. After that, I created procedure called [`db
 |resting_hr|src|Y|
 |...|...|...|  
 
-At the end, procedure [`dbo.p_populate_src_tables`](https://github.com/patrykrostkowski/Garmin_Data_ETL_Project/blob/main/2.DBs_Backup/garmin_21092023/dbo.p_populate_src_tables.StoredProcedure.sql) populates staging tables from sql views. For practice, I've recreate summary tables, specially [`dbo.daily_summary`](https://github.com/patrykrostkowski/Garmin_Data_ETL_Project/blob/main/2.DBs_Backup/garmin_21092023/dbo.vw_tbl_daily_summary.View.sql), which was a start point to higher data aggregation.
+At the end, procedure [`dbo.p_populate_src_tables`](https://github.com/patrykrostkowski/Garmin_Data_ETL_Project/blob/main/2.DBs_Backup/garmin_10102023/dbo.p_populate_src_tables.StoredProcedure.sql) populates staging tables from sql views. For practice, I've recreate summary tables, specially [`dbo.daily_summary`](https://github.com/patrykrostkowski/Garmin_Data_ETL_Project/blob/main/2.DBs_Backup/garmin_10102023/dbo.vw_tbl_daily_summary.View.sql), which was a start point to higher data aggregation.
 
 ---
 # Activity Analysis
