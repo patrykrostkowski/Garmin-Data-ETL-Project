@@ -48,7 +48,7 @@ To be able to choose which tables we want to load, config table [(example)](http
 - dbo - schema created for transformed objects
 - some columns were removed, cause it doesnt collect any/important data
 - time columns were converted to store only minutes as int
-- all transformation steps is beeing stored in `garmin` db, using cross database queries if needed.
+- all transformation steps are beeing stored in `garmin` db, using cross database queries (if needed).
 
 ### Analysis
 Here are some ideas I wanted to explore in further analysis
