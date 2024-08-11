@@ -5,7 +5,7 @@
 > - create semi-automated sql object backup process
 > - in a long term - create datamart for interactive dashboards\
 >   
-> *Note: all data is taken from Garmin VENU 2S. I'm not sure how the process work if another Garmin device collects more/less data.
+> *Note: Whole project was created based on collected data from Garmin VENU 2S. Any other device was not tested.
 
 
 # Garmin Data ETL Project 
