@@ -3,13 +3,13 @@ For a long time I was convinced that I'm able to maintain good physical health w
 
 Despite innate skepticism and thank to curiousness about new technologies I joined the fitness trackers journey. First of all, I tried Google Fit App but it involved carrying smartphone everywhere. In the meantime, I couldn't adopt any fancy smart digital watch which needed a re-charge every few days in order for them to tell the correct time.  
 
-So, after quite a long research, Garmin was a choice. After few days something clicked. The Garmin app did a pretty good job of capturing and showcasing the data, but personally, other brands like Huawei or Samsung did it in more consumable format. (but I must admit the Garmin is targetting their products for different market segment).  
+So, after quite a long research, Garmin was a choice. After few days something clicked. The Garmin app did a pretty good job of capturing and showcasing the data, but personally, other brands like Huawei or Samsung did it in more consumable format (although Garmin released in 2024 a new version of Heatlh app with new layout, wchich is way more accessible).
 
 <p align="center">
   <img width="700" height="350" src="https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/screenshots/Health%20Dashboards.png">
 </p>  
 
-> Source: https://blog.essentialdesign.com/rating-the-user-experience-of-wearables [access 10/9/2023]. Note, in 2024 Garmin release a new version of Heatlh app with new layout, wchich is way more accessible. 
+> Source: https://blog.essentialdesign.com/rating-the-user-experience-of-wearables [access 10/9/2023]. 
 
 
 Intrigued by the sheer variety of data points Garmin could capture, after few months I was urge to see what lies hidden behind the charts and get more information which I couldn't find there. Particulary I was curious about:
@@ -59,7 +59,7 @@ On the other hand, on weekend intentionally I spend more time moving. Across the
   <img width="1000" height="350" src="https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/screenshots/calories%2C%20activity%20time.png">
 </p> 
 
-I'm getting higher step counts on average than my dynamic goal (**11 415** vs **10 831**). This is due to some days, where I beat my goal a lot, e.x. during hiking or very busy day. When I compare a middle values of the data distribution, they are pretty similar (**10 667** vs **10 645**).  
+I'm getting higher step counts on average than my dynamic goal (**11 212** vs **10 441**). This is due to some days, where I beat my goal a lot, e.x. during hiking or very busy day. When I compare a median of the data distribution, they are pretty similar (**10 667** vs **10 645**).  
 
 Tuesdays and Thursdays were the days I averaged about 50-60min of strenth training and going to work by bike. Fewer minutes on the rest of the days were due to other things that has to be done (including laziness).  
 
