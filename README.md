@@ -1,4 +1,4 @@
-> #### Note: 07/16/2024 - this project is under development
+> #### Note: 10/06/2024 - this project is under development
 > Backlog:
 > - finish correlation part in analysis
 > - create sample ADF/SSIS package to trigger whole process
