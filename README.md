@@ -29,11 +29,11 @@ In this project it will be used 4 of them, except the last one, wchich is pretty
 
 ## Transformation
 In order to transform the data and use it in our study, the following were performed:
-- create linked servers to connect SQLite databases
+- [Create linked servers](https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/db_initial_setup/20240615_garmin_db_1_install_linked_servers.sql) to connect SQLite databases
 - [SQL procedure](https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/db_etl_objects/dbo.p_CreateSrcViews.StoredProcedure.sql) that creates staging views dynamically according to given schema and table name (that match SQLite table names) from config table. Thanks to that, data will be stored in one database.
 - [SQL procedure](https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/db_etl_objects/dbo.p_MergeSrcTables.StoredProcedure.sql) that creates and populates staging tables, with indexing to speed up the process
 - [SQL procedure](https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/db_etl_objects/dbo.p_MasterDataLoad.StoredProcedure.sql) that trigger whole process (with historical/incremental parameter), from populating staging and summary tables, with indexing
-- some SQL views with combination of specified data for visuals purpose
+- Some SQL views with combination of specified data for visuals purpose
 
 <p align="center">
   <img width="500" height="400" src="https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/screenshots/etl_flow_diagram.png">
