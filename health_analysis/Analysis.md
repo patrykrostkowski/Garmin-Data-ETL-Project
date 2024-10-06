@@ -9,7 +9,7 @@ So, after quite a long research, Garmin was a choice. After few days something c
   <img width="700" height="350" src="https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/screenshots/Health%20Dashboards.png">
 </p>  
 
-> Source: https://blog.essentialdesign.com/rating-the-user-experience-of-wearables [access 10/9/2023]  
+> Source: https://blog.essentialdesign.com/rating-the-user-experience-of-wearables [access 10/9/2023]. Note, in 2024 Garmin release a new version of Heatlh app with new layout, wchich is way more accessible. 
 
 
 Intrigued by the sheer variety of data points Garmin could capture, after few months I was urge to see what lies hidden behind the charts and get more information which I couldn't find there. Particulary I was curious about:
