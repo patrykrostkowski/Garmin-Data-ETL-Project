@@ -6,7 +6,7 @@ Despite innate skepticism and thank to curiousness about new technologies I join
 So, after quite a long research, Garmin was a choice. After few days something clicked. The Garmin app did a pretty good job of capturing and showcasing the data, but personally, other brands like Huawei or Samsung did it in more consumable format. (but I must admit the Garmin is targetting their products for different market segment).  
 
 <p align="center">
-  <img width="700" height="350" src="https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/main/0.Raw_images/Health%20Dashboards.png">
+  <img width="700" height="350" src="https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/screenshots/Health%20Dashboards.png">
 </p>  
 
 > Source: https://blog.essentialdesign.com/rating-the-user-experience-of-wearables [access 10/9/2023]  
@@ -24,39 +24,39 @@ Intrigued by the sheer variety of data points Garmin could capture, after few mo
 ---
 # Getting the Data 
 As mentioned in [README](https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/main/README.md), I downloaded and parsed data via [GarminDB](https://github.com/tcgoetz/GarminDB) into SQLite databases.  
-I've created linked servers in SSMS. After that, I created procedure called [`dbo.p_create_src_views`](https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/main/2.DBs_Backup/garmin_10102023/dbo.p_create_src_views.StoredProcedure.sql) that creates views dynamically by taking proper schema and table names from `dbo.config`. That process was repeated for 4 databases.  
+I've created linked servers in SSMS. After that, I created procedure called [`[dbo].[p_CreateSrcViews]`](https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/db_etl_objects/dbo.p_CreateSrcViews.StoredProcedure.sql) that creates views dynamically by taking proper schema and table names from `[acc].[SrcTblConfig]`. That process was repeated for 4 databases.  
 
-|TableSchema|SchemaName|IsActive|
-|---|---|---|
-|daily_summary|src|Y|
-|resting_hr|src|Y|
+|Domain|TableName|SchemaName|IsActive|
+|---|---|---|---|
+|garmin|daily_summary|src|1|
+|garmin_activities|activities|src|1|
+|garmin|devices|src|0|
 |...|...|...|  
 
-At the end, procedure [`dbo.p_populate_src_tables`](https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/main/2.DBs_Backup/garmin_10102023/dbo.p_populate_src_tables.StoredProcedure.sql) populates staging tables from sql views. For practice, I've recreate summary tables, specially [`dbo.daily_summary`](https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/main/2.DBs_Backup/garmin_10102023/dbo.vw_tbl_daily_summary.View.sql), which was a start point to higher data aggregation.
+At the end, procedure [`[dbo].[p_PopulateSrcTables]`](https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/db_etl_objects/dbo.p_PopulateSrcTables.StoredProcedure.sql) populates staging tables from sql views. For practice, I've recreate summary tables, specially [`[dbo].[DailySummary]`](https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/db_etl_objects/dbo.vwTblDailySummary.View.sql), which was a start point to further data transformation.
 
 ---
 # Activity Analysis
 First of all, let's check how my life looks after 240 days of measures. Like other brands, Garmin has some basic daily measures like steps, floors and calories. It also tracks, through the heart rate, how many minutes I spend daily being moderate and very active. At the very beginning I have set up step goal to 7000 and set to recalculate it based on usage (it's called auto step goal). I wanted to see how it behave in compare to fixed number of steps per day. It took only 5-6 days to increased my step goal to 10 000. That meant I doing more than I assumed.
 
 <p align="center">
-  <img width="980" height="650" src="https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/main/0.Raw_images/average%20patrick%20day.png">
+  <img width="980" height="550" src="https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/screenshots/average%20patrick%20day.png">
 </p>  
 
 The dashboard suggests I am averaging about 11k steps per day which is quite higher then average according to some [health studies](https://ijbnpa.biomedcentral.com/articles/10.1186/1479-5868-8-79#Sec3) or [meta-analysis](https://pubmed.ncbi.nlm.nih.gov/17911274/), wich estimates around 8000 steps per day as reasonable threshold.  
-Big part of burned calories is taken from running, cycling, strength training and football matches. The watch was bought on February, so most data comes from warm season of the year. I'm guessing this numbers can vary after I cover at least one whole year.  
-
+Big part of burned calories is taken from running, cycling and crossfit training. The watch was bought on February 2023, so I've collected data from warm and winter season wchich is less active.
   
 But let's look at these numbers in more detail.
 
 ## Steps, Active minutes
 The graph below shows heatmap of count of steps per hour. The first noticeable pattern is a brighter rectangle, which may lead to a conclusion I could have a sedentary job. Indeed, the hours from 9am to 5pm I spend mostly sitting, so the weekdays are clearly divided into few pieces. 
 <p align="center">
-  <img width="500" height="500" src="https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/main/0.Raw_images/steps%20over%20week.png">
+  <img width="500" height="500" src="https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/screenshots/steps%20over%20week.png">
 </p> 
 On the other hand, on weekend intentionally I spend more time moving. Across the week, we can see there are some step peaks - on Sunday and some weekdays. Sunday's peak is caused by evening football match, where I can do up to 12 000 'steps' in 90 min. High scores during the week, is probably because I used to come back from work on foot. Speccially on Mondays, when I am falling for the Monday Blues and I have to work this out.
 
 <p align="center">
-  <img width="1000" height="350" src="https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/main/0.Raw_images/calories%2C%20activity%20time.png">
+  <img width="1000" height="350" src="https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/screenshots/calories%2C%20activity%20time.png">
 </p> 
 
 I'm getting higher step counts on average than my dynamic goal (**11 415** vs **10 831**). This is due to some days, where I beat my goal a lot, e.x. during hiking or very busy day. When I compare a middle values of the data distribution, they are pretty similar (**10 667** vs **10 645**).  
@@ -67,7 +67,7 @@ Tuesdays and Thursdays were the days I averaged about 50-60min of strenth traini
 Analysing the heart rate and amount of calories burned per minute for various Activities shows some interesting findings. I must say it was fun to comparing own data with [Medical Comparative Study](https://pubmed.ncbi.nlm.nih.gov/25162652/), that showns similar calories rate per minute.  
 
 <p align="center">
-  <img width="1000" height="250" src="https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/main/0.Raw_images/activity%20heart%20rates%20and%20calories.png">
+  <img width="1000" height="250" src="https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/screenshots/activity%20heart%20rates%20and%20calories.png">
 </p>  
 
 > One note, I my case running means running intervals, up to 50 min, not long distance run.
@@ -81,7 +81,7 @@ Why it shouldn't be the only one?
 Because by setting our goal based on number of calories or intensity of activity, we ignore how muscles and metabolism reacts on particular stimulus.
 
 <p align="center">
-  <img width="800" height="400" src="https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/main/0.Raw_images/heart%20rate%20zones.png">
+  <img width="800" height="400" src="https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/screenshots/heart%20rate%20zones.png">
 </p>  
 
 The graph above shows time proportion of my heart rate during specific activities.
@@ -110,7 +110,7 @@ From the graphs below, I found that I was averaging a sleep of almost 7 hours wi
 > Note: the charts don't cover all months because sleep data has been recorded regularly from June.
 
 <p align="center">
-  <img width="1000" height="370" src="https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/main/0.Raw_images/sleep%20duration%20and%20across%20months.png">
+  <img width="1000" height="370" src="https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/screenshots/sleep%20duration%20and%20across%20months.png">
 </p>  
 
 **Wedding partys are really fun until you have to count them on both hands.**
@@ -124,7 +124,7 @@ How we feel when we wake up (fresh or with confusional arousal) is also dependin
 The pie chart shows that on an average, my body spends just about 18% in Deep sleep, 19% REM and the rest in either light or being slightly awake. 
 
 <p align="center">
-  <img width="1000" height="330" src="https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/main/0.Raw_images/sleep%20phases%20proportion%20over%20moths.png">
+  <img width="1000" height="330" src="https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/screenshots/sleep%20phases%20proportion%20over%20moths.png">
 </p>  
 The date-time plot of sleep phases shows that these numbers can very. Survived almost all weddings, my total slee ptime didn't change much, but I'm getting significant higher results in deep and REM sleep. Even I feel that I have more stable sleep schedule it super fun to find an evidence for that.  
 
