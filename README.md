@@ -1,6 +1,7 @@
 > #### Note: 10/06/2024 - this project is under development
 > Backlog:
 > - finish correlation part in analysis
+> - add daily performance dashboard
 > - create sample ADF/SSIS package to trigger whole process
 > - *create semi-automated sql object backup process
 > - in a long term - create datamart for interactive dashboards\
