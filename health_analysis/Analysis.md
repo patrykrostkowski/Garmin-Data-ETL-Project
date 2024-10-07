@@ -37,23 +37,23 @@ At the end, procedure [`[dbo].[p_PopulateSrcTables]`](https://github.com/patrykr
 
 ---
 # Activity Analysis
-First of all, let's check how my life looks after 240 days of measures. Like other brands, Garmin has some basic daily measures like steps, floors and calories. It also tracks, through the heart rate, how many minutes I spend daily being moderate and very active. At the very beginning I have set up step goal to 7000 and set to recalculate it based on usage (it's called auto step goal). I wanted to see how it behave in compare to fixed number of steps per day. It took only 5-6 days to increased my step goal to 10 000. That meant I doing more than I assumed.
+First of all, let's check how my life looks after more than 600 days of measures. Like other brands, Garmin has some basic daily measures like steps, floors and calories. It also tracks, through the heart rate, how many minutes I spend daily being moderate and very active. At the very beginning I have set up step goal to 7000 and set to recalculate it based on usage (it's called auto step goal, but currently I have a constant step goal of 10 000). I wanted to see how it behave in compare to fixed number of steps per day. It took only 5-6 days to increased my step goal to 10 000. That meant I doing more than I assumed.
 
 <p align="center">
-  <img width="980" height="550" src="https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/screenshots/average%20patrick%20day.png">
+  <img width="950" height="600" src="https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/screenshots/average%20patrick%20day.png">
 </p>  
 
-The dashboard suggests I am averaging about 11k steps per day which is quite higher then average according to some [health studies](https://ijbnpa.biomedcentral.com/articles/10.1186/1479-5868-8-79#Sec3) or [meta-analysis](https://pubmed.ncbi.nlm.nih.gov/17911274/), wich estimates around 8000 steps per day as reasonable threshold.  
-Big part of burned calories is taken from running, cycling and crossfit training. The watch was bought on February 2023, so I've collected data from warm and winter season wchich is less active.
+The dashboard suggests I am averaging about 11k steps per day which is quite higher then average according to some [health studies](https://ijbnpa.biomedcentral.com/articles/10.1186/1479-5868-8-79#Sec3) or [meta-analysis](https://pubmed.ncbi.nlm.nih.gov/17911274/), wich estimates around 8000 steps per day as reasonable threshold (I don't believe in a magic step count to stay healthy— in my opinion it's just the simplest measure everyone can follow and understand. What really matters is the minimal time we spend being active, when our heart pumps stronger, and that's the key behind all the studies).  
+Big part of burned calories is taken from running, cycling and crossfit training. The watch was bought on February 2023, so I've collected data from all seasons - more active and winter/lazy ones.
   
 But let's look at these numbers in more detail.
 
 ## Steps, Active minutes
-The graph below shows heatmap of count of steps per hour. The first noticeable pattern is a brighter rectangle, which may lead to a conclusion I could have a sedentary job. Indeed, the hours from 9am to 5pm I spend mostly sitting, so the weekdays are clearly divided into few pieces. 
+The graph below shows heatmap of count of steps per hour. The first noticeable pattern is a brighter rectangle, which may lead to a conclusion I could have a sedentary job, wchich is not a big suprise. Indeed, the hours from 9am to 5pm I spend mostly sitting, so the weekdays are clearly divided into few pieces. 
 <p align="center">
   <img width="500" height="500" src="https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/screenshots/steps%20over%20week.png">
 </p> 
-On the other hand, on weekend intentionally I spend more time moving. Across the week, we can see there are some step peaks - on Sunday and some weekdays. Sunday's peak is caused by evening football match, where I can do up to 12 000 'steps' in 90 min. High scores during the week, is probably because I used to come back from work on foot. Speccially on Mondays, when I am falling for the Monday Blues and I have to work this out.
+On the other hand, on weekend intentionally I spend more time moving. Across the week, we can see there are some step peaks - in the morning I am going for a quick walk or jogging and in the evening peaks are caused by training. Moreover, it happens to me often to come back from work on foot (partially).
 
 <p align="center">
   <img width="1000" height="350" src="https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/screenshots/calories%2C%20activity%20time.png">
@@ -64,7 +64,7 @@ I'm getting higher step counts on average than my dynamic goal (**11 212** vs **
 Tuesdays and Thursdays were the days I averaged about 50-60min of strenth training and going to work by bike. Fewer minutes on the rest of the days were due to other things that has to be done (including laziness).  
 
 ## Calories burned, Activity types
-Analysing the heart rate and amount of calories burned per minute for various Activities shows some interesting findings. I must say it was fun to comparing own data with [Medical Comparative Study](https://pubmed.ncbi.nlm.nih.gov/25162652/), that showns similar calories rate per minute.  
+Analysing the heart rate and amount of calories burned per minute for various Activities shows some interesting findings. I must say it was pretty fun to comparing own data with [Medical Comparative Study](https://pubmed.ncbi.nlm.nih.gov/25162652/), that showns similar calories rate per minute.  
 
 <p align="center">
   <img width="1000" height="250" src="https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/screenshots/activity%20heart%20rates%20and%20calories.png">
@@ -73,9 +73,9 @@ Analysing the heart rate and amount of calories burned per minute for various Ac
 > One note, I my case running means running intervals, up to 50 min, not long distance run.
 
 Just as research shows, heart rate is highly related to amount of calories burned per minute. It is interesting to see that running activities helps me burn the most calories, almost 13 per minute.  
-Hmm... I think the calculation is simple: to compensate for a beer, a 10 minute run is what I need. (**standing ovation, handshaking myself**)  
+That brings me to a conclusion... I think the calculation is simple: to compensate for a beer, a 10 minute run is what I need. (**standing ovation, handshaking myself**)  
 
-Along with cycling, football is my favourite sport. Again, I would say is a win-win scenario. Crossfit and swimming needs more data to fairly compare with others.
+Along with cycling and interval run, crossfit is my favourite sport. Again, I would say is a win-win scenario.
 Point to note here is that calories burned should not be the only metric on which these activities can be graded. But, this happens to be the only most understandable measure for people who wants to e.x. loose weight.  
 Why it shouldn't be the only one?  
 Because by setting our goal based on number of calories or intensity of activity, we ignore how muscles and metabolism reacts on particular stimulus.
@@ -92,11 +92,11 @@ Taking into account the number of calories burned per minute and how the body us
 It is fascinating that, based on knowledge about our bodies, we can choose how we exercise depending on what we are trying to achieve by being active (assuming we're not doing it just for fun).
 
 ## Sleep analysis
-After a few years working in shifts, I began to pay attention to the fact that inconsistent sleep affects my mood, metabolism, and cognitive performance. Overall, I had more time for myself and traveled more often, but depending on the time of the day, health has been mixed.  
+After a few years working in shifts, I began to pay attention to the fact that inconsistent sleep affects my mood, metabolism, and cognitive performance. Overall, I had more time for myself and traveled more frequently, but depending on the time of the day, health has been mixed.  
 Normally we spend almost a third of our life in sleeping, thats about 25 years! (how the personal coaches feels about it?)
 After I read 'Why We Sleep' by Matthew Walker I could say that it is well spend time (btw. I recommend this book). Knowing how much we owe to sleep, let us to get the most out of it.  
 
-When I change shift job, I appreciate a full night's sleep. The difference was perceptible.  
+When I left a shift job, I appreciate a full night's sleep. The difference was perceptible.  
 Reading more on sleep, I find some standard ways which can help achieve a good night sleep.
 - Following a relative consistent sleep schedule
 - Watch my diet
@@ -124,11 +124,11 @@ How we feel when we wake up (fresh or with confusional arousal) is also dependin
 The pie chart shows that on an average, my body spends just about 18% in Deep sleep, 19% REM and the rest in either light or being slightly awake. 
 
 <p align="center">
-  <img width="1000" height="330" src="https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/screenshots/sleep%20phases%20proportion%20over%20moths.png">
+  <img width="1000" height="310" src="https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/screenshots/sleep%20phases%20proportion%20over%20moths.png">
 </p>  
-The date-time plot of sleep phases shows that these numbers can very. Survived almost all weddings, my total slee ptime didn't change much, but I'm getting significant higher results in deep and REM sleep. Even I feel that I have more stable sleep schedule it super fun to find an evidence for that.  
+The date-time plot of sleep phases shows that these numbers can very. Survived almost all weddings, my total sleep time didn't change much, but I'm getting significant higher results in deep and REM sleep. Even I feel that I have more stable sleep schedule it super fun to find an evidence for that. Lately, I've reduced the time I'm awake and spent more time in deep sleep, which is good. 
 
-The reason I'm pleased for this is [non-REM sleep is ideal for the brain's glymphatic system to “clean” itself of toxins.](https://www.scientificamerican.com/article/deep-sleep-gives-your-brain-a-deep-clean1) 
+The reason I'm pleased for this is [non-REM sleep is ideal for the brain's glymphatic system to “clean” itself of toxins.](https://www.scientificamerican.com/article/deep-sleep-gives-your-brain-a-deep-clean1). I'm not a scientist, but flavors like these can make a curious person's day.
  
 ## Life Correlations
 sample text  
