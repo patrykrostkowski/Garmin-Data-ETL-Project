@@ -110,7 +110,7 @@ From the graphs below, I found that I was averaging a sleep of almost 7 hours wi
 > Note: the charts don't cover all months because sleep data has been recorded regularly from June.
 
 <p align="center">
-  <img width="1000" height="370" src="https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/screenshots/sleep%20duration%20and%20across%20months.png">
+  <img width="1000" height="350" src="https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/screenshots/sleep%20duration%20and%20across%20months.png">
 </p>  
 
 **Wedding partys are really fun until you have to count them on both hands.**
