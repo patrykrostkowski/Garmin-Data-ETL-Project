@@ -131,9 +131,22 @@ The date-time plot of sleep phases shows that these numbers can very. Survived a
 The reason I'm pleased for this is [non-REM sleep is ideal for the brain's glymphatic system to “clean” itself of toxins.](https://www.scientificamerican.com/article/deep-sleep-gives-your-brain-a-deep-clean1). I'm not a scientist, but flavors like these can make a curious person's day.
  
 ## Life Correlations
-sample text  
-sleep phases correlation  
-activity correlation
+Looking at the data from my Garmin watch, I had high hopes that certain patterns in my daily habits, sleep, and activity would reveal clear cause-and-effect relationships. But what do the numbers really say?
+
+The correlation matrix gives us a snapshot of these relationships, though many are weaker than expected. 
+One clear takeaway is that REM and deep sleep have the strongest positive impact on my overall sleep score. The more time spent in these restorative phases of sleep, the higher my sleep quality is.
+
+<p align="center">
+  <img width="800" height="300" src="https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/screenshots/correlation%20matrix.png">
+</p>  
+
+Interestingly, the data also shows a negative relationship between resting heart rate (RHR) and sleep score. A higher resting heart rate seems to diminish sleep quality (or poor sleep affects rhr), while also correlating with higher stress levels. 
+This suggests that managing my RHR through better stress management could lead to better sleep.
+
+Surprisingly, vigorous activity doesn't seem to correlate strongly with sleep quality or other key metrics. Even intense exercise, which I assumed would improve sleep, shows little connection here. 
+Similarly, light sleep appears to have minimal impact on the key outcomes I was tracking.
+
+In short, while some patterns, like the role of REM and deep sleep, are clear, the data suggests that many of the relationships I expected to be strong are more subtle than anticipated. The connection between stress, heart rate, and sleep quality might be the most actionable insight.
 
 ---  
 
