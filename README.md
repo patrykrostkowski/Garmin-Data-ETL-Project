@@ -1,6 +1,7 @@
 > #### Note: 10/06/2024 - this project is under development
 > Backlog:
 > - finish correlation part in analysis
+> - add daily performance dashboard
 > - create sample ADF/SSIS package to trigger whole process
 > - *create semi-automated sql object backup process
 > - in a long term - create datamart for interactive dashboards\
@@ -29,12 +30,11 @@ In this project it will be used 4 of them, except the last one, wchich is pretty
 
 ## Transformation
 In order to transform the data and use it in our study, the following were performed:
-- create linked servers to connect SQLite databases
-- SQL procedure that creates staging views dynamically according to given schema and table name (that match SQLite table names) from config table. Thanks to that, data will be stored in one database.
-- SQL procedure that creates and populates staging tables, with indexing to speed up the process
-- SQL procedure that creates and populates summary tables, with indexing
-- Create incremental data load process
-- some SQL views with combination of specified data for visuals purpose
+- [Create linked servers](https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/db_initial_setup/20240615_garmin_db_1_install_linked_servers.sql) to connect SQLite databases
+- [SQL procedure](https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/db_etl_objects/dbo.p_CreateSrcViews.StoredProcedure.sql) that creates staging views dynamically according to given schema and table name (that match SQLite table names) from config table. Thanks to that, data will be stored in one database.
+- [SQL procedure](https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/db_etl_objects/dbo.p_MergeSrcTables.StoredProcedure.sql) that creates and populates staging tables, with indexing to speed up the process
+- [SQL procedure](https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/db_etl_objects/dbo.p_MasterDataLoad.StoredProcedure.sql) that trigger whole process (with historical/incremental parameter), from populating staging and summary tables, with indexing
+- Some SQL views with combination of specified data for visuals purpose
 
 <p align="center">
   <img width="500" height="400" src="https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/screenshots/etl_flow_diagram.png">
@@ -46,11 +46,12 @@ The whole process (from getting Garmin's data to all sql transformations) was wr
 ## Data Cleanup and Analysis
 ### Data preparation and transformation 
 To be able to choose which tables we want to load, [config table](https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/screenshots/config_table.png) contains the full list of tables, the schema they will be created in, and an indicator pointing which table we want to see in the final output
+- acc - schema created for config and administration objects 
 - src - schema created for staging objects (by 'staging', I mean object loaded in the original structure as they were in the SQLite database)
 - dbo - schema created for transformed objects
-- some columns were removed, cause it doesnt collect any/important data
+- some columns at sink objects were removed, cause it doesnt collect any/important data
 - duration time columns were converted to store only minutes as int
-- all transformation steps are beeing stored in `garmin` database
+- all transformation steps are beeing stored in `garmin` database to avoid cross database queries
 
 ### Analysis
 Here are some ideas it was considering to explore in further analysis
