@@ -61,7 +61,7 @@ On the other hand, on weekend intentionally I spend more time moving. Across the
 
 I'm getting higher step counts on average than my dynamic goal (**11 212** vs **10 441**). This is due to some days, where I beat my goal a lot, e.x. during hiking or very busy day. When I compare a median of the data distribution, they are pretty similar (**10 667** vs **10 645**).  
 
-Tuesdays and Thursdays were the days I averaged about 50-60min of strenth training and going to work by bike. Fewer minutes on the rest of the days were due to other things that has to be done (including laziness).  
+During the week Im trying to mix crossfit/strenth training and going to work by bike. Fewer minutes on Monday could be due to non-sports things that has to be done (including laziness).  
 
 ## Calories burned, Activity types
 Analysing the heart rate and amount of calories burned per minute for various Activities shows some interesting findings. I must say it was pretty fun to comparing own data with [Medical Comparative Study](https://pubmed.ncbi.nlm.nih.gov/25162652/), that showns similar calories rate per minute.  
