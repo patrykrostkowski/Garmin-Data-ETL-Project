@@ -1,6 +1,5 @@
-> #### Note: 10/06/2024 - this project is under development
+> #### Note: 09/01/2025 - this project is under development
 > Backlog:
-> - finish correlation part in analysis
 > - add daily performance dashboard
 > - create sample ADF/SSIS package to trigger whole process
 > - *create semi-automated sql object backup process
@@ -37,7 +36,7 @@ In order to transform the data and use it in our study, the following were perfo
 - Some SQL views with combination of specified data for visuals purpose
 
 ---
-![Screenshot](https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/screenshots/etl_flow_diagram.png)
+![etl_flow_diagram](https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/screenshots/etl_flow_diagram.png)
 ---
 The whole process (from getting Garmin's data to all sql transformations) was wrapped up in an SSIS package and deployed into the SQL Integration Service Catalog.
 
