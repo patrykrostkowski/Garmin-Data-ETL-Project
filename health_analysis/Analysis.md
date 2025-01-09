@@ -5,10 +5,9 @@ Despite innate skepticism and thank to curiousness about new technologies I join
 
 So, after quite a long research, Garmin was a choice. After few days something clicked. The Garmin app did a pretty good job of capturing and showcasing the data, but personally, other brands like Huawei or Samsung did it in more consumable format (although Garmin released in 2024 a new version of Heatlh app with new layout, wchich is way more accessible).
 
-<p align="center">
-  <img width="700" height="350" src="https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/screenshots/Health%20Dashboards.png">
-</p>  
-
+---
+![Health%20Dashboards](https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/screenshots/Health%20Dashboards.png)
+---
 > Source: https://blog.essentialdesign.com/rating-the-user-experience-of-wearables [access 10/9/2023]. 
 
 
@@ -39,10 +38,9 @@ At the end, procedure [`[dbo].[p_PopulateSrcTables]`](https://github.com/patrykr
 # Activity Analysis
 First of all, let's check how my life looks after more than 600 days of measures. Like other brands, Garmin has some basic daily measures like steps, floors and calories. It also tracks, through the heart rate, how many minutes I spend daily being moderate and very active. At the very beginning I have set up step goal to 7000 and set to recalculate it based on usage (it's called auto step goal, but currently I have a constant step goal of 10 000). I wanted to see how it behave in compare to fixed number of steps per day. It took only 5-6 days to increased my step goal to 10 000. That meant I doing more than I assumed.
 
-<p align="center">
-  <img width="950" height="600" src="https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/screenshots/average%20patrick%20day.png">
-</p>  
-
+---
+![average%20patrick%20day](https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/screenshots/average%20patrick%20day.png)
+---
 The dashboard suggests I am averaging about 11k steps per day which is quite higher then average according to some [health studies](https://ijbnpa.biomedcentral.com/articles/10.1186/1479-5868-8-79#Sec3) or [meta-analysis](https://pubmed.ncbi.nlm.nih.gov/17911274/), wich estimates around 8000 steps per day as reasonable threshold (I don't believe in a magic step count to stay healthy— in my opinion it's just the simplest measure everyone can follow and understand. What really matters is the minimal time we spend being active, when our heart pumps stronger, and that's the key behind all the studies).  
 Big part of burned calories is taken from running, cycling and crossfit training. The watch was bought on February 2023, so I've collected data from all seasons - more active and winter/lazy ones.
   
@@ -55,9 +53,9 @@ The graph below shows heatmap of count of steps per hour. The first noticeable p
 </p> 
 On the other hand, on weekend intentionally I spend more time moving. Across the week, we can see there are some step peaks - in the morning I am going for a quick walk or jogging and in the evening peaks are caused by training. Moreover, it happens to me often to come back from work on foot (partially).
 
-<p align="center">
-  <img width="1000" height="350" src="https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/screenshots/calories%2C%20activity%20time.png">
-</p> 
+---
+![calories%2C%20activity%20time](https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/screenshots/calories%2C%20activity%20time.png)
+---
 
 I'm getting higher step counts on average than my dynamic goal (**11 212** vs **10 441**). This is due to some days, where I beat my goal a lot, e.x. during hiking or very busy day. When I compare a median of the data distribution, they are pretty similar (**10 667** vs **10 645**).  
 
@@ -66,9 +64,9 @@ During the week Im trying to mix crossfit/strenth training and going to work by 
 ## Calories burned, Activity types
 Analysing the heart rate and amount of calories burned per minute for various Activities shows some interesting findings. I must say it was pretty fun to comparing own data with [Medical Comparative Study](https://pubmed.ncbi.nlm.nih.gov/25162652/), that showns similar calories rate per minute.  
 
-<p align="center">
-  <img width="1000" height="250" src="https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/screenshots/activity%20heart%20rates%20and%20calories.png">
-</p>  
+---
+![activity%20heart%20rates%20and%20calories](https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/screenshots/activity%20heart%20rates%20and%20calories.png)
+---
 
 > One note, I my case running means running intervals, up to 50 min, not long distance run.
 
@@ -80,9 +78,9 @@ Point to note here is that calories burned should not be the only metric on whic
 Why it shouldn't be the only one?  
 Because by setting our goal based on number of calories or intensity of activity, we ignore how muscles and metabolism reacts on particular stimulus.
 
-<p align="center">
-  <img width="800" height="400" src="https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/screenshots/heart%20rate%20zones.png">
-</p>  
+---
+![heart%20rate%20zones](https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/screenshots/heart%20rate%20zones.png)
+---
 
 The graph above shows time proportion of my heart rate during specific activities.
 Taking into account the number of calories burned per minute and how the body uses energy, I can assume that in order to enjoy eating pizza and not gain fat, the best solution is light interval running over minimum 30-40 min.  
@@ -109,9 +107,9 @@ Some assumptions can be reviewed.
 From the graphs below, I found that I was averaging a sleep of almost 7 hours with high deviation in the numbers. Looks alarming. Do I have serious sleeping problem? I wouldn't say that. It just... 
 > Note: the charts don't cover all months because sleep data has been recorded regularly from June.
 
-<p align="center">
-  <img width="1000" height="350" src="https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/screenshots/sleep%20duration%20and%20across%20months.png">
-</p>  
+---
+![sleep%20duration%20and%20across%20months](https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/screenshots/sleep%20duration%20and%20across%20months.png)
+---
 
 **Wedding partys are really fun until you have to count them on both hands.**
 
@@ -123,9 +121,10 @@ How we feel when we wake up (fresh or with confusional arousal) is also dependin
 
 The pie chart shows that on an average, my body spends just about 18% in Deep sleep, 19% REM and the rest in either light or being slightly awake. 
 
-<p align="center">
-  <img width="1000" height="310" src="https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/screenshots/sleep%20phases%20proportion%20over%20moths.png">
-</p>  
+---
+![sleep%20phases%20proportion%20over%20moths](https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/screenshots/sleep%20phases%20proportion%20over%20moths.png)
+---
+
 The date-time plot of sleep phases shows that these numbers can very. Survived almost all weddings, my total sleep time didn't change much, but I'm getting significant higher results in deep and REM sleep. Even I feel that I have more stable sleep schedule it super fun to find an evidence for that. Lately, I've reduced the time I'm awake and spent more time in deep sleep, which is good. 
 
 The reason I'm pleased for this is [non-REM sleep is ideal for the brain's glymphatic system to “clean” itself of toxins.](https://www.scientificamerican.com/article/deep-sleep-gives-your-brain-a-deep-clean1). I'm not a scientist, but flavors like these can make a curious person's day.
@@ -136,9 +135,9 @@ Looking at the data from my Garmin watch, I had high hopes that certain patterns
 The correlation matrix gives us a snapshot of these relationships, though many are weaker than expected. 
 One clear takeaway is that REM and deep sleep have the strongest positive impact on my overall sleep score. The more time spent in these restorative phases of sleep, the higher my sleep quality is.
 
-<p align="center">
-  <img width="800" height="300" src="https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/screenshots/correlation%20matrix.png">
-</p>  
+---
+![correlation%20matrix](https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/screenshots/correlation%20matrix.png)
+---
 
 Interestingly, the data also shows a negative relationship between resting heart rate (RHR) and sleep score. A higher resting heart rate seems to diminish sleep quality (or poor sleep affects rhr), while also correlating with higher stress levels. 
 This suggests that managing my RHR through better stress management could lead to better sleep.
