@@ -1,13 +1,3 @@
-> #### Note: 09/01/2025 - this project is under development
-> Backlog:
-> - add daily performance dashboard
-> - create sample ADF/SSIS package to trigger whole process
-> - *create semi-automated sql object backup process
-> - in a long term - create datamart for interactive dashboards\
->   
-> *Note: Whole project was created based on collected data from Garmin VENU 2S. Any other device was not tested.
-
-
 # Garmin Data ETL Project   
 by Patryk Rostkowski
 
