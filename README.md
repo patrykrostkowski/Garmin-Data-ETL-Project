@@ -1,15 +1,4 @@
-> #### Note: 10/06/2024 - this project is under development
-> Backlog:
-> - finish correlation part in analysis
-> - add daily performance dashboard
-> - create sample ADF/SSIS package to trigger whole process
-> - *create semi-automated sql object backup process
-> - in a long term - create datamart for interactive dashboards\
->   
-> *Note: Whole project was created based on collected data from Garmin VENU 2S. Any other device was not tested.
-
-
-# Garmin Data ETL Project 
+# Garmin Data ETL Project   
 by Patryk Rostkowski
 
 ## Project Proposal
@@ -36,11 +25,9 @@ In order to transform the data and use it in our study, the following were perfo
 - [SQL procedure](https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/db_etl_objects/dbo.p_MasterDataLoad.StoredProcedure.sql) that trigger whole process (with historical/incremental parameter), from populating staging and summary tables, with indexing
 - Some SQL views with combination of specified data for visuals purpose
 
-<p align="center">
-  <img width="500" height="400" src="https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/screenshots/etl_flow_diagram.png">
-</p>
-
-
+---
+![etl_flow_diagram](https://github.com/patrykrostkowski/Garmin-Data-ETL-Project/blob/dev/screenshots/etl_flow_diagram.png)
+---
 The whole process (from getting Garmin's data to all sql transformations) was wrapped up in an SSIS package and deployed into the SQL Integration Service Catalog.
 
 ## Data Cleanup and Analysis
